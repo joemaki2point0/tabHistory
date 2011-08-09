@@ -1,0 +1,34 @@
+tabHistory.js
+copyright Joseph Maki
+
+tabHistory is a barebones script to create tabs with history support on browsers that support history.pushstate
+
+Required HTML elements:
+
+anchor links that represent each tab with the full path to their target page with the class historyTab.
+a div to hold the tabs contents with the id tabBody.
+
+CSS requirements:
+
+a .current class to style the currently active tab
+
+Server side info:
+This script was initially written to be used with Joomla!
+
+The pages should only return plain body content when requested via ajax but also needs to be able to load with a template if called directly.
+
+To achieve this we wrap the page in a conditional php statment and check for the HTTP_X_REQUESTED_WITH header
+
+<?php
+if($_SERVER[HTTP_X_REQUESTED_WITH]){
+?>
+//plain body content goes here
+<?php
+}
+else{
+?>
+// full template goes here
+
+
+
+
