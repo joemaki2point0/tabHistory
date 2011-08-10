@@ -137,13 +137,9 @@ $(".historyTab").live('click', function(e){
     $(".historyTab").removeClass('current');
     $(this).addClass('current');
     
-    //check support for history, disable it on lieing OS's like iOS
-    var histSupport = Boolean(
-        window.history && window.history.pushState && window.history.replaceState
-        && !((/ Mobile\/([1-7][a-z]|(8([abcde]|f(1[0-8]))))/i).test(navigator.userAgent)
-            || (/AppleWebKit\/5([0-2]|3[0-2])/i).test(navigator.userAgent)));
-
-    if ( histSupport )
+    //check for support. if the browser lies, the tabs will still work with ajax, 
+    //but the history features wont work. This seems to only be an issue on some mobile browsers
+    if ( window.history && window.history.pushState && window.history.replaceState )
     e.preventDefault();
     else
     return true;
