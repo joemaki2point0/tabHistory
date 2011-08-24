@@ -2,6 +2,8 @@ tabHistory.js
 copyright Joseph Maki
 
 tabHistory is a barebones script to create tabs with history support on browsers that support history.pushstate
+it uses jQurey and eventually I will wrap it into a jQuery plugin.
+Right now the classes/ids it looks for are hardcoded but they will become configurable at some point.
 
 Required HTML elements:
 
